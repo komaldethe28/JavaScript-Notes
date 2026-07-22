@@ -55,13 +55,13 @@ In JavaScript, functions are first-class citizens, which means they can be assig
 Internally, arrays are special types of objects that use numeric indices. Common array methods are `map()`, `filter()`, `reduce()`and `find()`, which are widely used in development.
 
 In React applications, I frequently use arrays for rendering lists of components using the `map()` method.
-'''
+
+### example of map() -
 const users = [
   { id: 1, name: "Alice" },
   { id: 2, name: "Bob" },
   { id: 3, name: "Charlie" }
 ];
-
 function App() {
   return (
     <div>
@@ -71,7 +71,7 @@ function App() {
     </div>
   );
 }
-'''
+
 
 ## Objects
 "An object is a collection of key-value pairs used to represent real-world entities and complex data structures. Objects are reference types and are one of the fundamental building blocks of JavaScript.
