@@ -82,5 +82,31 @@ They allow us to group related data and behavior together. Properties store data
 
 I commonly use objects to manage user information and application state."
 
-##
+##Loops
+"Loops are control structures used to execute a block of code repeatedly until a specified condition is met. They help reduce code duplication and make programs more efficient.
 
+JavaScript provides several types of loops, including `for`, `while`, `do-while`, `for...of`, and `for...in`.
+
+> * `for` loop is commonly used when the number of iterations is known.
+> * `while` loop is used when the number of iterations is unknown.
+> * `for...of` is used for iterating over iterable objects like arrays.
+> * `for...in` is used for iterating over object properties.
+
+In frontend development, I frequently use loops for traversing arrays, processing API data, and dynamically rendering UI components."
+
+---
+
+## Conditions
+"Conditional statements allow a program to make decisions based on specific conditions. They control the flow of execution by determining which block of code should be executed.
+
+JavaScript supports several conditional constructs, including `if`, `if-else`, `else-if`, `switch`, and the ternary operator.
+
+Conditions work by evaluating expressions that return either `true` or `false`.
+
+> For example:
+>
+> * `if-else` is suitable for simple decision-making.
+> * `switch` is useful when handling multiple cases.
+> * The ternary operator provides a concise way to write simple conditional expressions.
+
+> In my projects, I use conditional statements for form validation, role-based access control, conditional rendering in React, and handling different API response states such as loading, success, and error."
