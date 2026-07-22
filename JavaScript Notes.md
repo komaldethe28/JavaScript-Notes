@@ -28,19 +28,9 @@ In modern JavaScript development, let and const are preferred because they provi
 JavaScript has two categories of datatypes:
 
 - **Primitive Data Types:** 
-String
-Number
-Boolean
-Undefined
-Null
-Symbol
-BigInt
+String, Number, Boolean, Undefined, Null, Symbol
 - **Non-Primitive (Reference) Data Types:** 
-Object
-Array
-Function
-Map
-.............etc
+Object, Array, Function, Map
 
 Primitive datatypes are stored by value, whereas non-primitive datatypes are stored by reference."
 
