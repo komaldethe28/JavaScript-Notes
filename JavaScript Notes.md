@@ -43,3 +43,42 @@ Map
 .............etc
 
 Primitive datatypes are stored by value, whereas non-primitive datatypes are stored by reference."
+
+## Functions
+"A function is a reusable block of code designed to perform a specific task. Functions help improve code reusability, modularity, and maintainability.
+
+In JavaScript, functions are first-class citizens, which means they can be assigned to variables, passed as arguments, and returned from other functions. JavaScript supports various types of functions, including function declarations, function expressions, arrow functions, and anonymous functions."
+
+## Arrays
+"An array is an ordered collection of elements used to store multiple values in a single variable. JavaScript arrays are dynamic, meaning they can grow or shrink at runtime and can store elements of different datatypes.
+
+Internally, arrays are special types of objects that use numeric indices. Common array methods are `map()`, `filter()`, `reduce()`and `find()`, which are widely used in development.
+
+In React applications, I frequently use arrays for rendering lists of components using the `map()` method.
+'''
+const users = [
+  { id: 1, name: "Alice" },
+  { id: 2, name: "Bob" },
+  { id: 3, name: "Charlie" }
+];
+
+function App() {
+  return (
+    <div>
+      {users.map(user => (
+        <h2 key={user.id}>{user.name}</h2>
+      ))}
+    </div>
+  );
+}
+'''
+
+## Objects
+"An object is a collection of key-value pairs used to represent real-world entities and complex data structures. Objects are reference types and are one of the fundamental building blocks of JavaScript.
+
+They allow us to group related data and behavior together. Properties store data, while methods define behavior.
+
+I commonly use objects to manage user information and application state."
+
+##
+
