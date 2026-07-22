@@ -110,3 +110,5 @@ Conditions work by evaluating expressions that return either `true` or `false`.
 > * The ternary operator provides a concise way to write simple conditional expressions.
 
 > In my projects, I use conditional statements for form validation, role-based access control, conditional rendering in React, and handling different API response states such as loading, success, and error."
+---
+---
