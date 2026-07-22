@@ -280,3 +280,327 @@ Answer:
 > "The major difference is that regular functions create their own `this`, whereas arrow functions inherit `this` from their lexical scope. Additionally, arrow functions cannot be used as constructors and do not have their own `arguments` object."
 
 ---
+## Debouncing
+"Debouncing is a technique used to delay the execution of a function until a specified amount of time has passed since the last event was triggered.
+
+It helps improve application performance by preventing unnecessary function calls during high-frequency events.
+
+Common use cases include:
+ * Search suggestions
+ * Form validation
+ * Auto-save functionality
+ * Window resizing
+
+For example, in a search bar, instead of making an API call on every keystroke, debouncing ensures the API request is made only after the user stops typing for a specified duration.
+
+In frontend development, debouncing helps reduce API calls and improves user experience."
+
+### One-Liner:
+"Debouncing executes a function only after the user stops triggering an event."
+
+## Throttling
+"Throttling is a technique that limits the execution of a function to a fixed interval, regardless of how many times the event is triggered.
+
+Unlike debouncing, throttling guarantees that the function will execute periodically.
+
+Common use cases include:
+
+ * Infinite scrolling
+ * Mouse movement tracking
+ * Window scrolling
+ * Game controls
+
+For example, while scrolling a page, throttling ensures that the scroll handler executes once every few milliseconds instead of firing continuously.
+
+Throttling is primarily used for performance optimization in applications that deal with frequent events."
+
+### One-Liner:
+"Throttling ensures a function executes at regular intervals during continuous events."
+
+### Difference
+
+| Debouncing                | Throttling                 |
+| ------------------------- | -------------------------- |
+| Waits for inactivity      | Executes at intervals      |
+| Best for search bars      | Best for scrolling         |
+| Reduces unnecessary calls | Limits execution frequency |
+
+## Currying
+"Currying is a functional programming technique in which a function with multiple arguments is transformed into a sequence of functions, each accepting a single argument.
+
+This improves code reusability, readability, and allows partial application of functions.
+
+Currying is commonly used in libraries such as React, Redux, and Lodash.
+
+It is particularly useful when creating configurable and reusable functions."
+
+### Example:
+
+```javascript id="w1j6qb"
+function add(a) {
+    return function (b) {
+        return a + b;
+    };
+}
+
+add(5)(10); // 15
+```
+
+### One-Liner:
+"Currying transforms a function with multiple parameters into a chain of functions that each accept one parameter."
+
+## Polyfills
+"A polyfill is a piece of code that provides modern JavaScript functionality in environments or browsers that do not natively support it.
+
+Polyfills help maintain compatibility across different browser versions by implementing missing features.
+
+Examples include:
+ * `Promise`
+ * `Array.prototype.map`
+ * `Array.prototype.includes`
+ * `fetch`
+
+In real-world applications, Babel and core-js are commonly used to automatically add polyfills during the build process.
+
+Understanding polyfills is important because they ensure applications work consistently across multiple environments."
+
+### One-Liner:
+"A polyfill is code that implements modern JavaScript features in older environments that do not support them."
+
+### Interviewer Follow-Up Question:
+"Can you implement a debounce function?"
+
+```javascript id="r4qllm"
+function debounce(fn, delay) {
+    let timer;
+
+    return function (...args) {
+        clearTimeout(timer);
+
+        timer = setTimeout(() => {
+            fn.apply(this, args);
+        }, delay);
+    };
+}
+```
+## Memoization
+"Memoization is an optimization technique used to improve performance by storing the results of expensive function calls and returning the cached result when the same inputs occur again.
+
+Instead of recalculating the result every time, JavaScript retrieves it from memory, reducing computation time.
+
+Memoization is particularly useful for:
+
+ * Expensive calculations
+ * Recursive functions
+ * API response caching
+ * React performance optimization (`useMemo`)
+
+In React applications, I have used `useMemo` to avoid unnecessary recalculations during component re-renders."
+
+### One-Liner:
+"Memoization caches function results to avoid repeated computations."
+
+## Generators
+"Generators are special functions introduced in ES6 that can pause and resume their execution.
+
+They are defined using the `function*` syntax and use the `yield` keyword to return values one at a time.
+
+Unlike regular functions, generators do not execute completely when called. Instead, they return a Generator object that controls the execution flow.
+
+Generators are useful for:
+ * Lazy evaluation
+ * Infinite sequences
+ * State management
+ * Custom iterators
+
+They provide a memory-efficient way to work with large datasets."
+
+### Example:
+```javascript id="3u59jl"
+function* numbers() {
+    yield 1;
+    yield 2;
+    yield 3;
+}
+```
+
+### One-Liner:
+"Generators are functions that can pause and resume execution using the `yield` keyword."
+
+## Iterators
+"An Iterator is an object that enables sequential access to elements of a collection.
+
+It follows the Iterator Protocol, which requires implementing a `next()` method that returns an object containing:
+ * `value`
+ * `done`
+
+JavaScript's built-in data structures such as Arrays, Strings, Maps, and Sets are iterable by default.
+
+Iterators are the foundation of `for...of` loops and work closely with generators."
+
+### Example:
+```javascript id="vjlwmv"
+const arr = [1, 2, 3];
+const iterator = arr[Symbol.iterator]();
+
+iterator.next();
+```
+
+### One-Liner:
+"Iterators provide a standardized way to traverse collections one element at a time."
+
+## Event Delegation
+"Event Delegation is a technique where a single event listener is attached to a parent element instead of multiple child elements.
+
+It works because of JavaScript's event bubbling mechanism, where events propagate from the target element up through its ancestors.
+
+Event Delegation provides several benefits:
+
+ * Better performance
+ * Reduced memory usage
+ * Easier handling of dynamically added elements
+
+In frontend applications, it is commonly used in tables, lists, and dynamically generated components."
+
+### Example:
+```javascript id="vdj8bn"
+document
+    .getElementById("parent")
+    .addEventListener("click", (event) => {
+        console.log(event.target);
+    });
+```
+
+### One-Liner:
+"Event Delegation uses event bubbling to handle events efficiently using a single parent listener."
+
+## Modules
+"Modules are reusable units of code that encapsulate variables, functions, and classes into separate files.
+ES6 introduced native module support using the `import` and `export` keywords.
+
+ Modules provide:
+ * Better code organization
+ * Reusability
+ * Encapsulation
+ * Maintainability
+
+There are two types of exports:
+ * Named Exports
+ * Default Exports
+
+Modern frontend frameworks like React heavily rely on modules to structure applications."
+
+### Example:
+```javascript id="a0r7tu"
+// export
+export const add = (a, b) => a + b;
+
+// import
+import { add } from "./math.js";
+```
+
+### One-Liner:
+"Modules help organize and encapsulate code, making applications more scalable and maintainable."
+
+### If an interviewer asks:
+"Which of these concepts have you used in your projects?"
+You can confidently answer:
+* **Memoization:** `useMemo` in React.
+* **Generators:** Used for learning and understanding lazy evaluation.
+* **Iterators:** Used indirectly through `for...of` loops.
+* **Event Delegation:** Used for handling clicks in dynamic lists.
+* **Modules:** Used daily with `import` and `export` in React applications.
+
+## Memory Leaks
+"A memory leak occurs when memory that is no longer needed by an application is not released because references to it still exist.
+
+Over time, memory leaks can lead to increased memory consumption, degraded performance, and even application crashes.
+
+Common causes of memory leaks in JavaScript include:
+
+ * Unremoved event listeners
+ * Global variables
+ * Timers (`setInterval`)
+ * Closures holding unnecessary references
+ * Detached DOM elements
+
+In React applications, memory leaks often occur when asynchronous operations continue after a component has unmounted.
+
+To prevent memory leaks, I ensure proper cleanup using `useEffect` cleanup functions, remove event listeners, and clear timers when they are no longer needed."
+
+### One-Liner:
+"A memory leak occurs when memory remains allocated because references to unused objects still exist."
+
+## Garbage Collection
+"Garbage Collection is JavaScript's automatic memory management mechanism that identifies and removes objects that are no longer reachable in memory.
+
+JavaScript engines such as V8 primarily use the Mark-and-Sweep algorithm:
+ 1. Start from root objects (Global Object).
+ 2. Mark all reachable objects.
+ 3. Remove unmarked objects from memory.
+
+This process helps developers focus on application logic instead of manual memory management.
+
+However, garbage collection cannot reclaim memory if references to objects are still maintained, which is why memory leaks can still occur.
+
+Understanding Garbage Collection is important for building performant and memory-efficient applications."
+
+### One-Liner:
+"Garbage Collection automatically frees memory occupied by objects that are no longer reachable."
+
+## Shallow Copy vs Deep Copy
+"Copying objects and arrays in JavaScript can be categorized into Shallow Copy and Deep Copy.
+
+A Shallow Copy creates a new object but copies only the top-level properties. Nested objects continue to share the same references.
+
+A Deep Copy creates a completely independent copy, including all nested objects and arrays."
+
+### Shallow Copy Example:
+```javascript id="8kqj3l"
+const obj1 = {
+    name: "Komal",
+    address: {
+        city: "Pune"
+    }
+};
+
+const obj2 = { ...obj1 };
+```
+
+"In this case, `address` is still shared between both objects."
+
+### Deep Copy Example:
+
+```javascript id="0mns4u"
+const obj2 = structuredClone(obj1);
+```
+Other methods:
+
+* `JSON.parse(JSON.stringify())` (limitations)
+* `structuredClone()`
+* Lodash `cloneDeep()`
+
+### Comparison Table
+| Shallow Copy             | Deep Copy                  |
+| ------------------------ | -------------------------- |
+| Copies first level only  | Copies all levels          |
+| Shares nested references | Creates independent copies |
+| Faster                   | More expensive             |
+| Uses Spread Operator     | Uses `structuredClone()`   |
+
+### One-Liners
+* **Memory Leak:**
+  > "Memory leaks occur when unused objects remain in memory due to active references."
+
+* **Garbage Collection:**
+  > "Garbage Collection automatically removes unreachable objects from memory."
+
+* **Shallow Copy:**
+  > "A shallow copy copies only the first level of an object."
+
+* **Deep Copy:**
+  > "A deep copy creates a completely independent clone of an object, including all nested structures."
+
+### High-Impact Interview Statement
+
+> "Memory leaks and Garbage Collection are closely related. JavaScript's Garbage Collector can only free memory if objects become unreachable. If references are unintentionally retained through closures, event listeners, or global variables, memory leaks occur."
