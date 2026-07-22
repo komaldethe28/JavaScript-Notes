@@ -82,7 +82,7 @@ They allow us to group related data and behavior together. Properties store data
 
 I commonly use objects to manage user information and application state."
 
-##Loops
+## Loops
 "Loops are control structures used to execute a block of code repeatedly until a specified condition is met. They help reduce code duplication and make programs more efficient.
 
 JavaScript provides several types of loops, including `for`, `while`, `do-while`, `for...of`, and `for...in`.
